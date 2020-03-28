@@ -1,8 +1,7 @@
-# Webpack 
+# Apply Colors to Selection
+A Figma plugin to take a set of colours and randomly apply them to a selection.
 
-<img src="../_screenshots/webpack.png" width="400" />
-
-Creates rectangles. Demonstrates bundling plugin code using Webpack.
+![](./assets/figma-apply-colors-to-selection.gif)
 
 The main plugin code is in `src/code.ts`. The HTML for the UI is in
 `src/ui.html`, while the embedded JavaScript is in `src/ui.ts`.
@@ -13,4 +12,4 @@ your plugin.
 To build:
 
     $ npm install
-    $ npx webpack
+    $ npm run watch
