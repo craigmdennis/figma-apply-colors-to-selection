@@ -9,7 +9,17 @@ The main plugin code is in `src/code.ts`. The HTML for the UI is in
 These are compiled to files in `dist/`, which are what Figma will use to run
 your plugin.
 
-To build:
+## Build instructions
+First clone the repository and install the dev dependencies:
 
-    $ npm install
-    $ npm run watch
+```
+git clone git@github.com:craigmdennis/figma-random-color.git
+cd figma-apply-colors-to-selection
+npm install
+```
+
+Then compile the source files:
+
+```
+npm run watch
+```
