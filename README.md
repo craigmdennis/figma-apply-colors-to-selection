@@ -7,7 +7,7 @@ A Figma plugin to take a set of colours and randomly apply them to a selection.
 First clone the repository and install the dev dependencies:
 
 ```
-git clone git@github.com:craigmdennis/figma-random-color.git
+git clone git@github.com:craigmdennis/figma-apply-colors-to-selection.git
 cd figma-apply-colors-to-selection
 npm install
 ```
