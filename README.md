@@ -1,4 +1,4 @@
-# Color Randomizer
+# Apply Color to Selection
 Apply a set of colors randomly to a selection.
 
 1. (Optional) Before opening the plugin, select the element(s) who's fill color you want to use as a swatch.
