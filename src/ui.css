@@ -36,6 +36,7 @@ input[type="color"]::-webkit-color-swatch {
   border-radius: 3px;
   display: flex;
   margin-bottom: 4px;
+  width: 128px;
 }
 
 .remove {
@@ -47,6 +48,12 @@ input[type="color"]::-webkit-color-swatch {
   line-height: 0;
   font-weight: 300;
   color: #B2B2B2;
+  outline: none;
+}
+
+.remove:hover svg,
+.remove:focus svg {
+  color: #4D4D4D;
 }
 
 .color {

@@ -4,21 +4,32 @@ import randomItem from './random-item';
 
 figma.showUI(__html__, { width: 300, height: 208 })
 
-// For the number of currently selected elements
-// Get the fills
-// Deselect current selection
-// figma.currentPage.selection = [];
+// Create array of currently selected fills
+let initialSelectedFills = [];
 
-// Trim duplicates (?)
-// Create color inputs in the UI
+// Iterate through the current selection
+for (const node of figma.currentPage.selection) {
+
+  if ("fills" in node) {
+
+    // Convert 
+    const gl = node.fills[0].color;
+    const hex = chroma.gl(gl.r, gl.g, gl.b).hex();
+
+    // Get the current fills in order to clone and modify them
+    initialSelectedFills.push(hex);
+    
+  }
+}
+
+figma.ui.postMessage(initialSelectedFills);
 
 // -----------------------------------------------
 
 // When generating
 figma.ui.onmessage = msg => {
   if (msg.type === 'generate') {
-    
-    
+
     // Get the current selection
     const nodes = figma.currentPage.selection;
 
