@@ -1,19 +1,20 @@
 # Color Randomizer
 Apply a set of colors randomly to a selection.
 
-1. (Optional) Before opening the plugin, select the element(s) who's fill colour you want to use as a swatch.
+1. (Optional) Before opening the plugin, select the element(s) who's fill color you want to use as a swatch.
 
-1. Open the plugin which will now show the swatches based on your selection.
+2. Open the plugin and add/remove any swatches you want. Adding a new one will generate a new random color.
 
-1. Add any more colors you want to use.
+3. Back on the canvas, select all the elements you want and hit "Apply Colors". The selection will be filled randomly using the swatches.
 
-1. Back on the canvas, select all the shapes you want to apply the colors to and hit "Apply Colors".
+The plugin doesn't automatically close so you can hit "Apply Colors" as many times as you like.
 
-1. The plugin doesn't automatically close so you can hit "Apply Colors" as many times as you like.
+---
 
-**HINT:** If you want more of one color than others, add more swatches of that color.
+**HINT**: If you want more of one color than any others, add more swatches of that color.
 
-![](./assets/figma-apply-colors-to-selection.gif)
+---
+
 
 ## Build instructions
 First clone the repository and install the dev dependencies:
