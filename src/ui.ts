@@ -1,25 +1,61 @@
+import 'figma-plugin-ds/figma-plugin-ds.min.js'
+import 'figma-plugin-ds/figma-plugin-ds.min.css'
 import './ui.css'
+import inputArrayFromNodeList from './inputArrayFromNodeList'
 
-document.getElementById('generate').onclick = () => {
+const updateColor = (event) => {
+  console.log(event);
 
-  let nodeList : NodeList = document.querySelectorAll('.color');
-  let elementList : Array<HTMLInputElement> = [];
+  const hex = event.target.value;
+
+  event.target.parentElement.children[0].value = hex;
+  event.target.parentElement.children[1].value = hex;
+  
+}
+
+// Add a new color
+const removeSwatch = (event) => {
+
+  // const el = tsdom(event);
+  const existing =  document.querySelectorAll('.swatch');
+  
+  // If the number of events is greater than 1
+  if (event.target.classList.contains('remove') && existing.length !== 1) {
+    
+    // Find the parent event and remove it
+    event.target.parentElement.remove();
+
+  }
+  
+}
+
+// Clone an existing swatch
+const cloneSwatch = () => {
+  
+  // Create a clone of the color:
+  const clone = document.querySelector('.swatch:last-child').cloneNode( true );
+
+  // Append the newly created color picker
+  document.querySelector('#colors').prepend( clone );
+}
+
+const postColorsToPlugin = () => {
   let colors : Array<String> = [];
 
-  if (nodeList) {
-    for (let i = 0; i < nodeList.length; i++) {
-      let node : Node = nodeList[i];
+  // Get an array of all the color inputs
+  const elementList = inputArrayFromNodeList('.color');
 
-      // Make sure it's really an Element
-      if (node.nodeType == Node.ELEMENT_NODE) {
-        elementList.push(node as HTMLInputElement);
-      }
-    }
-  }
-
+  // Add color values to the array
   elementList.forEach(element => {
     colors.push(element.value);
   });
 
   parent.postMessage({ pluginMessage: {type: 'generate', colors }}, '*');
 }
+
+// Event listeners and callbacks
+document.getElementById('add').addEventListener('click', cloneSwatch);
+document.getElementById('generate').addEventListener('click', postColorsToPlugin);
+document.getElementById('colors').addEventListener('click', removeSwatch);
+document.getElementById('colors').addEventListener('change', updateColor);
+document.getElementById('colors').addEventListener('paste', updateColor);

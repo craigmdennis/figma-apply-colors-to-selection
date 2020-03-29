@@ -1,16 +1,15 @@
+import chroma from '../node_modules/chroma-js/chroma';
 import clone from './clone';
-import chroma from '../node_modules/chroma-js/chroma'
+import randomItem from './random-item';
 
-const randomItem = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-figma.showUI(__html__)
+figma.showUI(__html__, { width: 300, height: 208 })
 
 // For the number of currently selected elements
 // Get the fills
 // Deselect current selection
-// Trim duplicates
+// figma.currentPage.selection = [];
+
+// Trim duplicates (?)
 // Create color inputs in the UI
 
 // -----------------------------------------------
@@ -18,10 +17,12 @@ figma.showUI(__html__)
 // When generating
 figma.ui.onmessage = msg => {
   if (msg.type === 'generate') {
-    const nodes = []
-    console.log(msg.colors);
-
+    
+    
     // Get the current selection
+    const nodes = figma.currentPage.selection;
+
+    // Iterate through each selection
     for (const node of figma.currentPage.selection) {
 
       if ("fills" in node) {
@@ -36,9 +37,6 @@ figma.ui.onmessage = msg => {
     
         // Get a random colour from chroma-js.
         const random = chroma(randomItem(msg.colors)).gl();
-
-        console.log(random);
-        
     
         // Create an array that matches the fill structure (rgb represented as 0 to 1)
         const newColor = {r: random[0], g: random[1], b: random[2]};
@@ -51,10 +49,8 @@ figma.ui.onmessage = msg => {
     
       }
     }
-    // Get a random color from the array
-    // Apply it to the current fill
 
     figma.currentPage.selection = nodes;
-    figma.viewport.scrollAndZoomIntoView(nodes)
+    // figma.viewport.scrollAndZoomIntoView(nodes)
   }
 }
