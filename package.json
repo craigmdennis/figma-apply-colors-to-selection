@@ -1,7 +1,7 @@
 {
-  "name": "apply-colors-to-selection",
+  "name": "color-randomizer",
   "version": "1.0.0",
-  "description": "Apply a set of colors randomly to a selection",
+  "description": "Apply a set of colors randomly to a selection.",
   "main": "code.js",
   "scripts": {
     "watch": "npx webpack --mode=development --watch",

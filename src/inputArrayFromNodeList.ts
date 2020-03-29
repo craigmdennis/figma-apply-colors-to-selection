@@ -14,8 +14,6 @@ const inputArrayFromNodeList = (className: string) => {
     }
   }
 
-  console.log(elementList)
-
   return elementList;
 }
 
