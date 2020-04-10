@@ -1,6 +1,6 @@
 {
   "name": "Apply Colors to Selection",
-  "id": "825301478840922344",
+  "id": "830583682222038085",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui.html"
