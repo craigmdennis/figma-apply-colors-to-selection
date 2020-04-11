@@ -1,12 +1,14 @@
-# Apply Color to Selection
+![](./assets/figma-cover.png)
 
-![Github Heat Map Demo](./src/assets/figma-plugin-github-heatmap-demo.gif)
+# Apply Color to Selection
 
 1. (Optional) Before opening the plugin, select the element(s) who's fill color you want to use as a swatch.
 
 2. Open the plugin and add/remove any swatches you want. Adding a new one will generate a new random color.
 
 3. Back on the canvas, select all the elements you want and hit "Apply Colors". The selection will be filled randomly using the swatches.
+
+![Github Heat Map Demo](./src/assets/figma-plugin-github-heatmap-demo.gif)
 
 The plugin doesn't automatically close so you can hit "Apply Colors" as many times as you like.
 
@@ -15,6 +17,7 @@ The plugin doesn't automatically close so you can hit "Apply Colors" as many tim
 ---
 
 ## Build instructions
+
 First clone the repository and install the dev dependencies:
 
 ```
